@@ -2,8 +2,7 @@ const Transaction = require("../models/Transaction");
 
 const postTransaction = (req, res) => {
   let newTransaction = new Transaction({
-    type: req.body.type,
-    numberOfLegs: req.body.numberOfLegs,
+    name: req.body.name,
   });
   newTransaction
     .save()
