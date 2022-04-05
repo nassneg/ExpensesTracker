@@ -7965,14 +7965,154 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Header */ "./src/components/Header.js");
+/* harmony import */ var _components_Balance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Balance */ "./src/components/Balance.js");
+/* harmony import */ var _components_IncomeExpenses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/IncomeExpenses */ "./src/components/IncomeExpenses.js");
+/* harmony import */ var _components_TransactionList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TransactionList */ "./src/components/TransactionList.js");
+/* harmony import */ var _components_AddTransaction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AddTransaction */ "./src/components/AddTransaction.js");
+
+
+
+
+
 
 
 
 var App = function App(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Hello!!"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Balance__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncomeExpenses__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TransactionList__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_AddTransaction__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/components/AddTransaction.js":
+/*!******************************************!*\
+  !*** ./src/components/AddTransaction.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AddTransaction": () => (/* binding */ AddTransaction),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var AddTransaction = function AddTransaction() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Add new transaction"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "form-control"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "text"
+  }, "Text"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    placeholder: "Enter text..."
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "form-control"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "amount"
+  }, "Amount ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "(negative - expense, positive - income)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "number",
+    placeholder: "Enter amount..."
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "btn"
+  }, "Add transaction")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddTransaction);
+
+/***/ }),
+
+/***/ "./src/components/Balance.js":
+/*!***********************************!*\
+  !*** ./src/components/Balance.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Balance": () => (/* binding */ Balance),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Balance = function Balance() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Your Balance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " $0.00"));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Balance);
+
+/***/ }),
+
+/***/ "./src/components/Header.js":
+/*!**********************************!*\
+  !*** ./src/components/Header.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Header": () => (/* binding */ Header),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Header = function Header() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Expense Tracker");
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
+/***/ "./src/components/IncomeExpenses.js":
+/*!******************************************!*\
+  !*** ./src/components/IncomeExpenses.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var IncomeExpenses = function IncomeExpenses() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "inc-exp-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Income"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    className: "money plus"
+  }, "+$0.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    className: "money minus"
+  }, "-$0.00")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IncomeExpenses);
+
+/***/ }),
+
+/***/ "./src/components/TransactionList.js":
+/*!*******************************************!*\
+  !*** ./src/components/TransactionList.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var TransactionList = function TransactionList() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "History"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: "list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+    className: "minus"
+  }, "Cash ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "-$400"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "delete-btn"
+  }, "X"))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TransactionList);
 
 /***/ }),
 
@@ -7994,8 +8134,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\r\n  background-color: powderblue;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,4BAA4B;AAC9B","sourcesContent":["html {\r\n  background-color: powderblue;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f7f7f7;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100vh;\r\n  margin: 0;\r\n  font-family: \"Lato\", sans-serif;\r\n}\r\n\r\n.container {\r\n  margin: 30px auto;\r\n  width: 350px;\r\n}\r\n\r\nh1 {\r\n  letter-spacing: 1px;\r\n  margin: 0;\r\n}\r\n\r\nh3 {\r\n  border-bottom: 1px solid #bbb;\r\n  padding-bottom: 10px;\r\n  margin: 40px 0 10px;\r\n}\r\n\r\nh4 {\r\n  margin: 0;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.inc-exp-container {\r\n  background-color: #fff;\r\n  box-shadow: var(--box-shadow);\r\n  padding: 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 20px 0;\r\n}\r\n\r\n.inc-exp-container > div {\r\n  flex: 1;\r\n  text-align: center;\r\n}\r\n\r\n.inc-exp-container > div:first-of-type {\r\n  border-right: 1px solid #dedede;\r\n}\r\n\r\n.money {\r\n  font-size: 20px;\r\n  letter-spacing: 1px;\r\n  margin: 5px 0;\r\n}\r\n\r\n.money.plus {\r\n  color: #2ecc71;\r\n}\r\n\r\n.money.minus {\r\n  color: #c0392b;\r\n}\r\n\r\nlabel {\r\n  display: inline-block;\r\n  margin: 10px 0;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"number\"] {\r\n  border: 1px solid #dedede;\r\n  border-radius: 2px;\r\n  display: block;\r\n  font-size: 16px;\r\n  padding: 10px;\r\n  width: 100%;\r\n}\r\n\r\n.btn {\r\n  cursor: pointer;\r\n  background-color: #9c88ff;\r\n  box-shadow: var(--box-shadow);\r\n  color: #fff;\r\n  border: 0;\r\n  display: block;\r\n  font-size: 16px;\r\n  margin: 10px 0 30px;\r\n  padding: 10px;\r\n  width: 100%;\r\n}\r\n\r\n.btn:focus,\r\n.delete-btn:focus {\r\n  outline: 0;\r\n}\r\n\r\n.list {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.list li {\r\n  background-color: #fff;\r\n  box-shadow: var(--box-shadow);\r\n  color: #333;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.list li.plus {\r\n  border-right: 5px solid #2ecc71;\r\n}\r\n\r\n.list li.minus {\r\n  border-right: 5px solid #c0392b;\r\n}\r\n\r\n.delete-btn {\r\n  cursor: pointer;\r\n  background-color: #e74c3c;\r\n  border: 0;\r\n  color: #fff;\r\n  font-size: 20px;\r\n  line-height: 20px;\r\n  padding: 2px 5px;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  transform: translate(-100%, -50%);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n}\r\n\r\n.list li:hover .delete-btn {\r\n  opacity: 1;\r\n}\r\n\r\n@media (max-width: 320px) {\r\n  .container {\r\n    width: 300px;\r\n  }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;EACE,0EAA0E;AAC5E;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;EACzB,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,iBAAiB;EACjB,SAAS;EACT,+BAA+B;AACjC;;AAEA;EACE,iBAAiB;EACjB,YAAY;AACd;;AAEA;EACE,mBAAmB;EACnB,SAAS;AACX;;AAEA;EACE,6BAA6B;EAC7B,oBAAoB;EACpB,mBAAmB;AACrB;;AAEA;EACE,SAAS;EACT,yBAAyB;AAC3B;;AAEA;EACE,sBAAsB;EACtB,6BAA6B;EAC7B,aAAa;EACb,aAAa;EACb,8BAA8B;EAC9B,cAAc;AAChB;;AAEA;EACE,OAAO;EACP,kBAAkB;AACpB;;AAEA;EACE,+BAA+B;AACjC;;AAEA;EACE,eAAe;EACf,mBAAmB;EACnB,aAAa;AACf;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,qBAAqB;EACrB,cAAc;AAChB;;AAEA;;EAEE,yBAAyB;EACzB,kBAAkB;EAClB,cAAc;EACd,eAAe;EACf,aAAa;EACb,WAAW;AACb;;AAEA;EACE,eAAe;EACf,yBAAyB;EACzB,6BAA6B;EAC7B,WAAW;EACX,SAAS;EACT,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,aAAa;EACb,WAAW;AACb;;AAEA;;EAEE,UAAU;AACZ;;AAEA;EACE,qBAAqB;EACrB,UAAU;EACV,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;EACtB,6BAA6B;EAC7B,WAAW;EACX,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,aAAa;EACb,cAAc;AAChB;;AAEA;EACE,+BAA+B;AACjC;;AAEA;EACE,+BAA+B;AACjC;;AAEA;EACE,eAAe;EACf,yBAAyB;EACzB,SAAS;EACT,WAAW;EACX,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,iCAAiC;EACjC,UAAU;EACV,6BAA6B;AAC/B;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE;IACE,YAAY;EACd;AACF","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Lato&display=swap\");\r\n\r\n:root {\r\n  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f7f7f7;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100vh;\r\n  margin: 0;\r\n  font-family: \"Lato\", sans-serif;\r\n}\r\n\r\n.container {\r\n  margin: 30px auto;\r\n  width: 350px;\r\n}\r\n\r\nh1 {\r\n  letter-spacing: 1px;\r\n  margin: 0;\r\n}\r\n\r\nh3 {\r\n  border-bottom: 1px solid #bbb;\r\n  padding-bottom: 10px;\r\n  margin: 40px 0 10px;\r\n}\r\n\r\nh4 {\r\n  margin: 0;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.inc-exp-container {\r\n  background-color: #fff;\r\n  box-shadow: var(--box-shadow);\r\n  padding: 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin: 20px 0;\r\n}\r\n\r\n.inc-exp-container > div {\r\n  flex: 1;\r\n  text-align: center;\r\n}\r\n\r\n.inc-exp-container > div:first-of-type {\r\n  border-right: 1px solid #dedede;\r\n}\r\n\r\n.money {\r\n  font-size: 20px;\r\n  letter-spacing: 1px;\r\n  margin: 5px 0;\r\n}\r\n\r\n.money.plus {\r\n  color: #2ecc71;\r\n}\r\n\r\n.money.minus {\r\n  color: #c0392b;\r\n}\r\n\r\nlabel {\r\n  display: inline-block;\r\n  margin: 10px 0;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"number\"] {\r\n  border: 1px solid #dedede;\r\n  border-radius: 2px;\r\n  display: block;\r\n  font-size: 16px;\r\n  padding: 10px;\r\n  width: 100%;\r\n}\r\n\r\n.btn {\r\n  cursor: pointer;\r\n  background-color: #9c88ff;\r\n  box-shadow: var(--box-shadow);\r\n  color: #fff;\r\n  border: 0;\r\n  display: block;\r\n  font-size: 16px;\r\n  margin: 10px 0 30px;\r\n  padding: 10px;\r\n  width: 100%;\r\n}\r\n\r\n.btn:focus,\r\n.delete-btn:focus {\r\n  outline: 0;\r\n}\r\n\r\n.list {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.list li {\r\n  background-color: #fff;\r\n  box-shadow: var(--box-shadow);\r\n  color: #333;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.list li.plus {\r\n  border-right: 5px solid #2ecc71;\r\n}\r\n\r\n.list li.minus {\r\n  border-right: 5px solid #c0392b;\r\n}\r\n\r\n.delete-btn {\r\n  cursor: pointer;\r\n  background-color: #e74c3c;\r\n  border: 0;\r\n  color: #fff;\r\n  font-size: 20px;\r\n  line-height: 20px;\r\n  padding: 2px 5px;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  transform: translate(-100%, -50%);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n}\r\n\r\n.list li:hover .delete-btn {\r\n  opacity: 1;\r\n}\r\n\r\n@media (max-width: 320px) {\r\n  .container {\r\n    width: 300px;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
