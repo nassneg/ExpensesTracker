@@ -16,7 +16,7 @@ export const Categories = () => {
       <h3>Categories</h3>
 
       <label htmlFor="categoryDisp">
-        Category <br />
+        Category <br /> <br />
         <select
           name="categoryDisp"
           value={category}
