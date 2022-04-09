@@ -1,9 +1,7 @@
 const Transaction = require("../models/Transaction");
 
 const postTransaction = (req, res) => {
-  let newTransaction = new Transaction({
-    name: req.body.name,
-  });
+  let newTransaction = new Transaction(req.body);
   newTransaction
     .save()
     .then((result) => {
@@ -39,4 +37,21 @@ const getTransaction = (req, res) => {
     });
 };
 
-module.exports = { postTransaction, getTransaction, getTransactions };
+const deleteTransaction = (req, res) => {
+  Transaction.findOne({ _id: req.params.id })
+    .remove()
+    .exec()
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+};
+
+module.exports = {
+  postTransaction,
+  getTransaction,
+  getTransactions,
+  deleteTransaction,
+};

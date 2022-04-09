@@ -1,14 +1,12 @@
 import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
+import axios from "axios";
 
 //Initial state
 const initialState = {
-  transactions: [
-    { id: 1, text: "Flower", amount: -20 },
-    { id: 2, text: "Salary", amount: 300 },
-    { id: 3, text: "Book", amount: -10 },
-    { id: 4, text: "Camera", amount: 150 },
-  ],
+  transactions: [],
+  error: null,
+  loading: true,
 };
 
 // Create context
@@ -20,25 +18,52 @@ export const GlobalProvider = ({ children }) => {
 
   // Actions
   function deleteTransaction(id) {
-    dispatch({
-      type: "DELETE_TRANSACTION",
-      payload: id,
-    });
+    axios
+      .delete(`/api/v1/transactions/${id}`)
+      .then((res) => {
+        dispatch({
+          type: "DELETE_TRANSACTION",
+          payload: id,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function addTransaction(transaction) {
-    dispatch({
-      type: "ADD_TRANSACTION",
-      payload: transaction,
-    });
+    axios
+      .post(`/api/v1/transactions`, transaction)
+      .then((res) => {
+        dispatch({
+          type: "ADD_TRANSACTION",
+          payload: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
-
+  function getTransactions() {
+    axios
+      .get("/api/v1/transactions")
+      .then((res) => {
+        dispatch({
+          type: "GET_TRANSACTIONS",
+          payload: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <GlobalContext.Provider
       value={{
         transactions: state.transactions,
         deleteTransaction,
         addTransaction,
+        getTransactions,
       }}
     >
       {children}
