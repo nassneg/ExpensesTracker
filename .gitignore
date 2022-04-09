@@ -104,5 +104,4 @@ dist
 .tern-port
 
 .c9
-.env
 node_modules
