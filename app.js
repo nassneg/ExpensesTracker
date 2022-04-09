@@ -9,7 +9,7 @@ connection.once("open", () => {
   });
 });
 
-app.use(express.static("../client/public"));
+app.use(express.static("./client/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
