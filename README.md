@@ -62,64 +62,69 @@ npm run watch
 
 Get the list of all transactions from MongoDB;
 
-Response:
-    [
-        {
-            "_id": "6250eb982469abe7b5d12fa9",
-            "text": "Meat",
-            "amount": -12,
-            "category": "food",
-            "createdAt": "2022-04-09T02:12:40.423Z",
-            "__v": 0
-        },
-        {
-            "_id": "6250ebf12469abe7b5d12fb0",
-            "text": "Salary",
-            "amount": 4000,
-            "category": "personal",
-            "createdAt": "2022-04-09T02:14:09.920Z",
-            "__v": 0
-        }
-    ]
+```javascript
+Response: [
+  {
+    _id: "6250eb982469abe7b5d12fa9",
+    text: "Meat",
+    amount: -12,
+    category: "food",
+    createdAt: "2022-04-09T02:12:40.423Z",
+    __v: 0,
+  },
+  {
+    _id: "6250ebf12469abe7b5d12fb0",
+    text: "Salary",
+    amount: 4000,
+    category: "personal",
+    createdAt: "2022-04-09T02:14:09.920Z",
+    __v: 0,
+  },
+];
+```
 
 #### GET /api/v1/transactions/<category>
 
 Get the list of transactions filtered by category;
 
-Response:
-    [
-        {
-            "_id": "6250eb982469abe7b5d12fa9",
-            "text": "Meat",
-            "amount": -12,
-            "category": "food",
-            "createdAt": "2022-04-09T02:12:40.423Z",
-            "__v": 0
-        },
-        {
-            "_id": "6250f20f13df8b058a3f43cb",
-            "text": "Fish",
-            "amount": -120,
-            "category": "food",
-            "createdAt": "2022-04-09T02:40:15.494Z",
-            "__v": 0
-        }
-    ]
+```javascript
+Response: [
+  {
+    _id: "6250eb982469abe7b5d12fa9",
+    text: "Meat",
+    amount: -12,
+    category: "food",
+    createdAt: "2022-04-09T02:12:40.423Z",
+    __v: 0,
+  },
+  {
+    _id: "6250f20f13df8b058a3f43cb",
+    text: "Fish",
+    amount: -120,
+    category: "food",
+    createdAt: "2022-04-09T02:40:15.494Z",
+    __v: 0,
+  },
+];
+```
 
 #### DELETE /api/v1/transactions/<id>
 
 Delete one transactions from the DB;
 
+```javascript
 Response:
         {
             "acknowledged": true,
             "deletedCount": 1
         }
+```
 
 #### POST /api/v1/transactions
 
 Create a new transaction records in the DB
 
+```javascript
 Response:
         {
             "data": {
@@ -132,12 +137,13 @@ Response:
             }
         }
 
-Body:  
+Body:
         {
             "text": "Steak",
             "amount": -90,
             "category": "food"
         }
+```
 
 ## App Info
 
