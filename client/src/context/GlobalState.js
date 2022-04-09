@@ -5,6 +5,7 @@ import axios from "axios";
 //Initial state
 const initialState = {
   transactions: [],
+  filteredTransactions: [],
   error: null,
   loading: true,
 };
@@ -37,7 +38,7 @@ export const GlobalProvider = ({ children }) => {
       .then((res) => {
         dispatch({
           type: "ADD_TRANSACTION",
-          payload: res.data,
+          payload: res.data.data,
         });
       })
       .catch((err) => {
@@ -57,13 +58,29 @@ export const GlobalProvider = ({ children }) => {
         console.log(err);
       });
   }
+
+  function getFilteredTransactions(category) {
+    axios
+      .get(`/api/v1/transactions/${category}`)
+      .then((res) => {
+        dispatch({
+          type: "GET_FILTERED_TRANSACTIONS",
+          payload: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <GlobalContext.Provider
       value={{
         transactions: state.transactions,
+        filteredTransactions: state.filteredTransactions,
         deleteTransaction,
         addTransaction,
         getTransactions,
+        getFilteredTransactions,
       }}
     >
       {children}

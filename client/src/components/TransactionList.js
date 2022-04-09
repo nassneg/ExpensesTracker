@@ -5,7 +5,6 @@ import { GlobalContext } from "../context/GlobalState";
 const TransactionList = () => {
   const { transactions, getTransactions } = useContext(GlobalContext);
   useEffect(() => {
-    console.log("wow");
     getTransactions();
   }, []);
 

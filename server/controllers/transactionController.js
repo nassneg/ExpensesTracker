@@ -7,7 +7,6 @@ const postTransaction = (req, res) => {
     .then((result) => {
       res.json({
         data: newTransaction,
-        url: `/api/transactions/${newTransaction._id}`,
       });
     })
     .catch((err) => {
@@ -26,8 +25,8 @@ const getTransactions = (req, res) => {
     });
 };
 
-const getTransaction = (req, res) => {
-  Transaction.findOne({ _id: req.params.id })
+const getTransactionByCategory = (req, res) => {
+  Transaction.find({ category: req.params.category })
     .exec()
     .then((results) => {
       res.json(results);
@@ -51,7 +50,7 @@ const deleteTransaction = (req, res) => {
 
 module.exports = {
   postTransaction,
-  getTransaction,
+  getTransactionByCategory,
   getTransactions,
   deleteTransaction,
 };

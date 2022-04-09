@@ -5,6 +5,7 @@ import Balance from "./components/Balance";
 import IncomeExpenses from "./components/IncomeExpenses";
 import TransactionList from "./components/TransactionList";
 import AddTransaction from "./components/AddTransaction";
+import Categories from "./components/Categories";
 import { GlobalProvider } from "./context/GlobalState";
 
 const App = (props) => {
@@ -14,6 +15,7 @@ const App = (props) => {
       <div>
         <Balance />
         <IncomeExpenses />
+        <Categories />
         <TransactionList />
         <AddTransaction />
       </div>

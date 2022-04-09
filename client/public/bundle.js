@@ -9964,7 +9964,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_IncomeExpenses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/IncomeExpenses */ "./src/components/IncomeExpenses.js");
 /* harmony import */ var _components_TransactionList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TransactionList */ "./src/components/TransactionList.js");
 /* harmony import */ var _components_AddTransaction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AddTransaction */ "./src/components/AddTransaction.js");
-/* harmony import */ var _context_GlobalState__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./context/GlobalState */ "./src/context/GlobalState.js");
+/* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Categories */ "./src/components/Categories.js");
+/* harmony import */ var _context_GlobalState__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./context/GlobalState */ "./src/context/GlobalState.js");
+
 
 
 
@@ -9975,7 +9977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_context_GlobalState__WEBPACK_IMPORTED_MODULE_6__.GlobalProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Balance__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncomeExpenses__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TransactionList__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_AddTransaction__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_context_GlobalState__WEBPACK_IMPORTED_MODULE_7__.GlobalProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Balance__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncomeExpenses__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Categories__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TransactionList__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_AddTransaction__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -10021,6 +10023,11 @@ var AddTransaction = function AddTransaction() {
       amount = _useState4[0],
       setAmount = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("def"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      category = _useState6[0],
+      setCategory = _useState6[1];
+
   var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_GlobalState__WEBPACK_IMPORTED_MODULE_1__.GlobalContext),
       addTransaction = _useContext.addTransaction;
 
@@ -10029,7 +10036,8 @@ var AddTransaction = function AddTransaction() {
     var newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       text: text,
-      amount: +amount
+      amount: +amount,
+      category: category
     };
     addTransaction(newTransaction);
   };
@@ -10043,6 +10051,7 @@ var AddTransaction = function AddTransaction() {
   }, "Text"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
     placeholder: "Enter text...",
+    name: "text",
     value: text,
     onChange: function onChange(e) {
       setText(e.target.value);
@@ -10055,10 +10064,40 @@ var AddTransaction = function AddTransaction() {
     type: "number",
     placeholder: "Enter amount...",
     value: amount,
+    name: "amount",
     onChange: function onChange(e) {
       setAmount(e.target.value);
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "form-control"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "category"
+  }, "Category ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
+    name: "category",
+    value: category,
+    onChange: function onChange(e) {
+      setCategory(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    disabled: true,
+    value: "def"
+  }, "--Select Category--"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "food"
+  }, "Food"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "clothing"
+  }, "Clothing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "transportation"
+  }, "Transportation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "housing"
+  }, "Housing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "utilities"
+  }, "Utilities"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "medical"
+  }, "Medical"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "entertainment"
+  }, "Entertainment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "personal"
+  }, "Personal")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "btn"
   }, "Add transaction")));
 };
@@ -10093,9 +10132,93 @@ var Balance = function Balance() {
   var total = amounts.reduce(function (acc, item) {
     return acc += item;
   }, 0).toFixed(2);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Your Balance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " $", total));
+  var sign = total < 0 ? "-" : "+";
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Your Balance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, sign, "$", Math.abs(total)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Balance);
+
+/***/ }),
+
+/***/ "./src/components/Categories.js":
+/*!**************************************!*\
+  !*** ./src/components/Categories.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Categories": () => (/* binding */ Categories),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Transaction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Transaction */ "./src/components/Transaction.js");
+/* harmony import */ var _context_GlobalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/GlobalState */ "./src/context/GlobalState.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var Categories = function Categories() {
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_GlobalState__WEBPACK_IMPORTED_MODULE_2__.GlobalContext),
+      filteredTransactions = _useContext.filteredTransactions,
+      getFilteredTransactions = _useContext.getFilteredTransactions;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("def"),
+      _useState2 = _slicedToArray(_useState, 2),
+      category = _useState2[0],
+      setCategory = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    getFilteredTransactions(category);
+  }, [category]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Categories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "categoryDisp"
+  }, "Category ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
+    name: "categoryDisp",
+    value: category,
+    onChange: function onChange(e) {
+      setCategory(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    disabled: true,
+    value: "def"
+  }, "--Select Category--"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "food"
+  }, "Food"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "clothing"
+  }, "Clothing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "transportation"
+  }, "Transportation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "housing"
+  }, "Housing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "utilities"
+  }, "Utilities"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "medical"
+  }, "Medical"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "entertainment"
+  }, "Entertainment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "personal"
+  }, "Personal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: "list"
+  }, filteredTransactions.map(function (transaction) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Transaction__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: transaction._id,
+      transaction: transaction
+    });
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Categories);
 
 /***/ }),
 
@@ -10227,7 +10350,6 @@ var TransactionList = function TransactionList() {
       getTransactions = _useContext.getTransactions;
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log("wow");
     getTransactions();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "History"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
@@ -10279,6 +10401,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _objectSpread(_objectSpread({}, state), {}, {
         loading: false,
         transactions: action.payload
+      });
+
+    case "GET_FILTERED_TRANSACTIONS":
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        filteredTransactions: action.payload
       });
 
     case "DELETE_TRANSACTION":
@@ -10334,6 +10462,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var initialState = {
   transactions: [],
+  filteredTransactions: [],
   error: null,
   loading: true
 }; // Create context
@@ -10364,7 +10493,7 @@ var GlobalProvider = function GlobalProvider(_ref) {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/v1/transactions", transaction).then(function (res) {
       dispatch({
         type: "ADD_TRANSACTION",
-        payload: res.data
+        payload: res.data.data
       });
     })["catch"](function (err) {
       console.log(err);
@@ -10382,12 +10511,25 @@ var GlobalProvider = function GlobalProvider(_ref) {
     });
   }
 
+  function getFilteredTransactions(category) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/v1/transactions/".concat(category)).then(function (res) {
+      dispatch({
+        type: "GET_FILTERED_TRANSACTIONS",
+        payload: res.data
+      });
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(GlobalContext.Provider, {
     value: {
       transactions: state.transactions,
+      filteredTransactions: state.filteredTransactions,
       deleteTransaction: deleteTransaction,
       addTransaction: addTransaction,
-      getTransactions: getTransactions
+      getTransactions: getTransactions,
+      getFilteredTransactions: getFilteredTransactions
     }
   }, children);
 };

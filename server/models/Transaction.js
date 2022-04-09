@@ -15,6 +15,20 @@ const TransactionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  category: {
+    type: String,
+    enum: [
+      "food",
+      "clothing",
+      "transportation",
+      "housing",
+      "utilities",
+      "medical",
+      "entertainment",
+      "personal",
+    ],
+    default: "personal",
+  },
 });
 const Transaction = mongoose.model("Transaction", TransactionSchema);
 module.exports = Transaction;

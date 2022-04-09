@@ -6,6 +6,12 @@ export default (state, action) => {
         loading: false,
         transactions: action.payload,
       };
+    case "GET_FILTERED_TRANSACTIONS":
+      return {
+        ...state,
+        loading: false,
+        filteredTransactions: action.payload,
+      };
     case "DELETE_TRANSACTION":
       return {
         ...state,

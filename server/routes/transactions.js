@@ -1,14 +1,16 @@
 const router = require("express").Router();
 const {
   getTransactions,
-  getTransaction,
+  getTransactionByCategory,
   postTransaction,
   deleteTransaction,
 } = require("../controllers/transactionController");
 
+const { FormValidator } = require("../validator");
+
 router.get("/", getTransactions);
-router.get("/:id", getTransaction);
+router.get("/:category", getTransactionByCategory);
 router.delete("/:id", deleteTransaction);
-router.post("/", postTransaction);
+router.post("/", [FormValidator, postTransaction]);
 
 module.exports = router;
